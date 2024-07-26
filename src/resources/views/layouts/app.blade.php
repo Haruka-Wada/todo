@@ -18,7 +18,7 @@
                 <nav>
                     <ul class="header-nav">
                         <li class="header-nav__item">
-                            <a href="/category" class="header-nav__link">カテゴリ一覧</a>
+                            <a href="/categories" class="header-nav__link">カテゴリ一覧</a>
                         </li>
                     </ul>
                 </nav>
