@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use App\Models\Category;
 use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
 {
     public function index() {
         $todos = Todo::all();
-        return view ('index', compact('todos'));
+        $categories = Category::all();
+        return view ('index', compact('todos', 'categories'));
     }
 
     public function store(TodoRequest $request) {
