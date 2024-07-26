@@ -40,8 +40,8 @@
             <tr class="category-table__row">
                 <td class="category-table__item">
                     <form class="update-form" action="/categories/update" method="post">
-                        @csrf
                         @method('patch')
+                        @csrf
                         <div class="update-form__item">
                             <input class="update-form__item-input" type="text" name="name" value="{{ $category['name'] }}">
                             <input type="hidden" name="id" value="{{ $category['id'] }}">
@@ -52,7 +52,10 @@
                     </form>
                 </td>
                 <td class="category-table__item">
-                    <form class="delete-form">
+                    <form class="delete-form" action="/categories/delete" method="post">
+                        @method('delete')
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $category['id'] }}">
                         <div class="delete-form__button">
                             <button class="delete-form__button-submit" type="submit">削除</button>
                         </div>
